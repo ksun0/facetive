@@ -14,7 +14,7 @@
 
 <script>
 $('#post-<%= post.id %>').click(function(){
-    window.location.href = document.location.origin + '/posts/' + <%= post.id %>;
+    window.location.href = '<%= request.base_url %>' + '/posts/' + '<%= post.id %>';
 });
 $('#post-<%= post.id %> .user').click(function(e){
     e.stopPropagation();
