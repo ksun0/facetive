@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Welcome | School Ground</title>
+  <%= favicon_link_tag 'favicon.ico' %>
+
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <%= stylesheet_link_tag "landing" %>
+
+  <script src="https://use.typekit.net/kee5bgn.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+  <%= csrf_meta_tags %>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88742970-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- Facebook Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1300467423327845');
+      fbq('track', 'PageView');
+      </script>
+      <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1300467423327845&ev=PageView&noscript=1"/>
+      </noscript>
+      <!-- DO NOT MODIFY -->
+      <!-- End Facebook Pixel Code -->
+    </head>
+
+    <body>
+      <section id="banner">
+        <div class="wrapper">
+          <header>
+
+            <a href="#banner"><p id="logo">Facet<span>ive</span></p></a>
+
+            <nav>
+              <a href="#welcome">Welcome</a>
+              <a href="#features">Features</a>
+              <a href="#learn">Learn</a>
+              <a href="#contact">Contact</a>
+              <%= link_to "Sign In", login_path, class: 'button button_secondary button_small' %>
+            </nav>
+          </header>
+
+          <div class="content">
+            <h1 class="title">Facts and Perspectives</h1>
+            <p class="subtitle">Get the Help You Need to Excel
+              <br/> Collaborative Study Groups
+              <br/> One-on-One Tutors Via Virtual Classrooms
+              <br/> Anytime. Anywhere.
+              <br/> Become a student, tutor, or both
+            </p>
+            <div class="button_wrapper">
+              <%= link_to "Sign Up", signup_path, class: "button button_green" %>
+              <%= link_to "Enter", root_path, class: "button button_secondary" %>
+            </div>
+            <%= link_to image_tag("arrows_down.png"), '#features', {class: 'see_more'} %>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="cf">
+        <div class="wrapper">
+          <div class="feature">
+            <h3>An Easier Learning Experience</h3>
+            <p>You will be able to study more effectively with collaborations with fellow students. Additionally, you can post questions in your study group forum at any time, and even request help from knowledgeable tutors who have already taken your course.</p>
+            <a href="#" class="button button_green button_small">Learn More</a>
+          </div>
+
+          <div class="feature middle">
+            <h3>Create Virtual Study Groups</h3>
+            <p>The key to learning is to work with peers and form study groups. If you are struggling to find a compatible study partner, School Ground is perfect for you.</p>
+            <a href="#" class="button button_green button_small">Learn More</a>
+          </div>
+
+          <div class="feature">
+            <h3>Connect With New Classmates</h3>
+            <p>Collaboration is becoming more and more popular as people realize how effective studying with others is. Students in any grade will be able to reach out to one other for study help, and you will get a chance to meet new classmates you did know before.</p>
+            <a href="#" class="button button_green button_small">Learn More</a>
+          </div>
+          <!-- <ul class="features">
+              <li class="icon fa-paper-plane-o">
+                  <h3>
+                          Share Files
+                      </h3>
+                  <p> You can upload, share, and access anything within a study group, including study notes, images, videos, documents, and other files. </p>
+              </li>
+              <li class="icon fa-question">
+                  <h3>
+                          Ask and Answer Questions
+                      </h3>
+                  <p> Post any questions you have on a question forum, whether you want to learn seomthing new or you need help on a homework problem. </p>
+              </li>
+              <li class="icon fa-code">
+                  <h3>
+                          Virtual Classroom
+                      </h3>
+                  <p> Using breathtaking API's, School Ground will allow you to enter a virtual classroom, where you can write on a shared whiteboard, video call others, and discuss problems. </p>
+              </li>
+              <li class="icon fa-laptop">
+                  <h3>
+                          Tutors
+                      </h3>
+                  <p> If you need help, you can easily reach out to peer tutors. Otherwise, you can volunteer to tutor others to gain glory points and prizes for our tutor of the month award! </p>
+              </li>
+              <li class="icon fa-calendar-o">
+                  <h3>
+                          Schedule Study Sessions
+                      </h3>
+                  <p> You can schedule public or private in-person study sessions. This is a great way to create an open study group with everyone in your class right before an exam! </p>
+              </li>
+              <li class="icon fa-comments-o">
+                  <h3>
+                          Chat
+                      </h3>
+                  <p> Enter live chat groups with your study partners and friends, or schedule a live chat with a tutor if you have a quick question. </p>
+              </li>
+          </ul> -->
+        </div>
+      </section>
+
+      <section id="learn">
+        <div class="wrapper">
+          <h2 class="title">Learn How to Use School Ground</h2>
+          <h3 class="subtitle">
+            School Ground pioneers the utilization of technologies to finally change student collaboration for the better.
+            <br/>
+            <br/> We specialize in converting old world concepts like study groups and classrooms to the virtual world, breaking down the barriers of space and time to promote inclusivenss among students.
+            See how it works below.
+          </h3>
+          <!-- <img src="images/logos.png" alt="Past client" class="logos"> -->
+
+          <ul id="slider_buttons">
+            <a href="#">
+              <li class="current"></li>
+            </a>
+            <a href="#">
+              <li></li>
+            </a>
+            <a href="#">
+              <li></li>
+            </a>
+          </ul>
+
+          <ul id="slider">
+            <li><img src="/images/collaborate.png" alt="Collaborate"></li>
+            <li><img src="/images/studygroups.png" alt="Study Groups"></li>
+            <li><img src="/images/studygroup.jpg" alt="Study Group"></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="wrapper">
+          <h2 class="title">Get in touch</h2>
+          <p class="subtitle">Contact or follow us.</p>
+          <a href="#" class="button button_green button_large">Contact Us</a>
+        </div>
+      </section>
+
+      <footer>
+        <p class="copyright">&copy; 2016 <a href="#banner">School Ground</a>.</p>
+      </footer>
+    </body>
+    </html>
