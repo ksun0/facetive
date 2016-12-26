@@ -1,10 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
-@mixin box_sizing {
+$dark: #424652;
+$light: #9a9da4;
+$green: #7ac483;
+$border: #E9E9E9;
+$danger: #a94442;
+
+* {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
@@ -18,118 +26,189 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
   font-family: 'Forum', serif;
 }
 
-section {
-  overflow: auto;
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
 }
 
-textarea {
-  resize: vertical;
+.wrapper {
+  width: 50%;
+  margin: 0 auto;
 }
 
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
+.wrapper_padding {
+  padding: 2rem 0;
+}
+
+.clearfix:before
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
 }
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  color: $dark;
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
+    text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
+  font-size: 2.75rem;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+h3 {
+  font-size: 2.5rem;
 }
 
+h4 {
+  font-size: 2.25rem;
+}
+
+h5 {
+  font-size: 2.00rem;
+}
+
+h6 {
+  font-size: 1.75rem;
+}
+
+p, li {
+  font-size: 1.5rem;
+  line-height: 1.75;
+}
+
+p, ul, ol, {
+  margin: 0 0 1.6em 0;
+}
+
+a {
+  color: $green;
+  font-weight: 700;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $green;
+  }
+}
+
+hr {
+  width: 5em;
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 2px solid $green;
+  margin: 2rem 0;
+}
 
 /* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  padding-top: 9px;
-  &:hover {
-    color: white;
-    text-decoration: none;
+#main_navigation {
+  padding: 2em 5%;
+  border-bottom: 1px solid $border;
+  .logo {
+    font-weight: 700;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    border: 2px solid $border;
+    letter-spacing: 3px;
+    padding: 1rem;
+    color: $dark;
+    float: left;
+    &:hover {
+      background: $green;
+      color: #ffffff;
+    }
+  }
+  nav {
+    float: right;
+    padding-top: 1.5rem;
+    a {
+      color: $dark;
+      margin: 0 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      &:hover {
+        color: $green;
+      }
+    }
   }
 }
 
 /* footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
+.main_footer {
+  padding: 2em 5% 4em 5%;
+  .copyright {
+    float: left;
+    margin: 0;
+  }
+  nav {
+    float: right;
+    i {
+      color: $dark;
+      font-size: 2rem;
+      &:hover {
+        color: $green;
+      }
+    }
+    a {
+      margin-left: 1em;
     }
   }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
+  a {
+    color: $dark;
+    &:hover {
+      color: $green;
     }
   }
 }
 
-/* sidebar */
+/* feed */
+.col-1, .col-2 {
+  float: left;
+}
 
-aside {
-  section.user_info {
-    margin-top: 20px;
+.col-1 {
+  width: 25%;
+  padding: 0 5% 0 2.5%;
+}
+
+.col-2 {
+  width: 75%;
+  padding: 0 2.5%
+}
+
+/* Gravatar */
+
+section {
+  padding: 10px 0;
+  &:first-child {
+    border: 0;
+    padding-top: 0;
   }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
+  span {
+    display: block;
+    margin-bottom: 3px;
+    line-height: 1;
+  }
+  h3 {
+    text-align: left;
+    letter-spacing: -1px;
+    margin-bottom: 3px;
+    margin-top: 0px;
   }
 }
 
@@ -149,15 +228,14 @@ aside {
   a {
     float: left;
     padding: 0 10px;
-    border-left: 1px solid $gray-lighter;
+    border-left: 1px solid $border;
     color: gray;
     &:first-child {
       padding-left: 0;
       border: 0;
     }
     &:hover {
-      text-decoration: none;
-      color: blue;
+      color: $green;
     }
   }
   strong {
@@ -176,21 +254,24 @@ aside {
   }
 }
 
-.users.follow {
-  padding: 0;
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $border;
+  }
 }
+
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+input[type="text"], input[type="email"], input[type="password"], textarea {
   width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
 }
 
 #error_explanation {
@@ -204,7 +285,7 @@ input {
 .field_with_errors {
   @extend .has-error;
   .form-control {
-    color: $state-danger-text;
+    color: $danger;
   }
 }
 
@@ -222,37 +303,23 @@ input {
   margin-left: 0;
 }
 
-/* Users index */
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
+#follow-form {
+  margin-top: 2rem;
 }
 
 /* posts */
 
 .posts {
-  list-style: none;
-  padding: 0;
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+  .clickable {
+    padding: 10px;
+    border-bottom: 1px solid $border;
   }
 
   .clickable:hover {
-      background: #eee;
-      cursor: pointer;
+    background: #eee;
+    cursor: pointer;
   }
 
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
   .title {
     display: block;
     margin-left: 60px;
@@ -261,6 +328,7 @@ input {
   }
 
   .content {
+    font-size: 1.5rem;
     display: block;
     margin-left: 60px;
     img {
@@ -268,38 +336,22 @@ input {
       padding: 5px 0;
     }
   }
+
   .timestamp {
-    color: $gray-light;
+    color: $light;
     display: block;
     margin-left: 60px;
   }
   .gravatar {
     float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
-}
-
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
-
-span.picture {
-  margin-top: 10px;
-  input {
-    border: 0;
   }
 }
 
 /* miscellaneous */
 
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
+// .debug_dump {
+//   clear: both;
+//   float: left;
+//   width: 100%;
+//   margin-top: 45px;
+// }

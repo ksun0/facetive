@@ -1,9 +1,9 @@
-<div class="row">
-    <h3>All Posts</h3>
+<% provide(:title, "Home") %>
+
+    <h1 class="text-center">All Posts</h1>
     <% if @posts.any? %>
       <ol class="posts">
         <%= render @posts %>
       </ol>
-      <%= will_paginate @posts %>
+      <%= will_paginate @posts, class:"text-center" %>
     <% end %>
-</div>

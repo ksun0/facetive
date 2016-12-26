@@ -1,12 +1,12 @@
-<footer class="footer">
-  <small>
-    <%= link_to "Facts and Perspectives", welcome_path %>
-    by <a href="https://www.facebook.com/factsandperspectives/" target="_blank">Facetive</a>
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About",   about_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
-    </ul>
-  </nav>
+<footer class="main_footer">
+
+    <p class="copyright"><%= link_to "Facts and Perspectives", welcome_path %>
+    by <a href="https://www.facebook.com/factsandperspectives/" target="_blank">&copy; Facetive 2016</a></p>
+    <nav>
+      <%= link_to "About",   about_path %>
+      <%= link_to "Contact", contact_path %>
+      <%= link_to "<i class='fa fa-facebook'></i>".html_safe, "https://www.facebook.com/factsandperspectives/", target: "blank" %>
+        <%= link_to "<i class='fa fa-twitter'></i>".html_safe, "https://twitter.com/?lang=en", target: "blank" %>
+          <%= link_to "<i class='fa fa-github'></i>".html_safe, "https://github.com/ksun0/facetive", target: "blank" %>
+    </nav>
 </footer>
