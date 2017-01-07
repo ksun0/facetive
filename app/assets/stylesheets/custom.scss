@@ -7,6 +7,7 @@
 
 $gray-medium-light: #eaeaea;
 $dark: #424652;
+$white: #FFFFFF;
 $light: #9a9da4;
 $green: #7ac483;
 $border: #E9E9E9;
@@ -34,7 +35,7 @@ body {
   margin: 0 auto;
 }
 
-.skinny-wrapper {
+.skinny_wrapper {
   width: 50%;
   margin: 0 auto;
 }
@@ -53,6 +54,20 @@ body {
   clear: both;
 }
 
+.pagination:before,
+.pagination:after {
+  content: " ";
+  display: table;
+}
+
+.pagination:after {
+  clear: box;
+}
+
+.pagination {
+
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6, p, ul, li {
@@ -63,6 +78,10 @@ h1 {
     text-transform: uppercase;
   font-size: 3rem;
   font-weight: 700;
+}
+
+.h1-small {
+    text-transform: lowercase;
 }
 
 h2 {
@@ -128,8 +147,8 @@ hr {
     color: $dark;
     float: left;
     &:hover {
-      background: $green;
-      color: #ffffff;
+      color: $green;
+      border: 2px solid $green;
     }
   }
   nav {
@@ -182,12 +201,12 @@ hr {
 }
 
 .col-1 {
-  width: 25%;
+  width: 40%;
   padding: 0 5% 0 2.5%;
 }
 
 .col-2 {
-  width: 75%;
+  width: 60%;
   padding: 0 2.5%
 }
 
@@ -222,8 +241,9 @@ section {
 }
 
 .stats {
+  clear: both;
   overflow: auto;
-  margin-top: 0;
+  margin-top: 5px;
   padding: 0;
   a {
     float: left;
@@ -270,8 +290,21 @@ section {
 
 /* forms */
 
-input[type="text"], input[type="email"], input[type="password"], textarea {
+input[type="text"], input[type="email"], input[type="password"], input[type="file"], textarea {
   width: 100%;
+  max-width: 100%;
+  border: 2px solid $border;
+  padding: 0.5em;
+  margin: 0 0 .75em 0;
+}
+
+textarea {
+
+}
+
+input[type="submit"] {
+    margin-top: 1em;
+    margin-bottom: 2em;
 }
 
 #error_explanation {
@@ -290,7 +323,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
 }
 
 .checkbox {
-  margin-top: -10px;
+  margin-top: -5px;
   margin-bottom: 10px;
   span {
     margin-left: 20px;
@@ -320,6 +353,13 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
     cursor: pointer;
   }
 
+  .post-settings {
+    float: right !important;
+    a {
+      margin-left: 10px;
+    }
+  }
+
   .title {
     display: block;
     margin-left: 60px;
@@ -345,6 +385,19 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   .gravatar {
     float: left;
   }
+}
+
+.truncated_posts {
+  .content {
+    max-height: 10.5ex;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+#disqus_thread {
+
 }
 
 /* miscellaneous */

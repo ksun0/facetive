@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def new
     @post  = current_user.posts.build
+    render :partial=> 'new'
   end
 
   def create
@@ -41,16 +42,16 @@ class PostsController < ApplicationController
 
   private
 
-    def post_params
-      params.require(:post).permit(:title, :content, :picture)
-    end
+  def post_params
+    params.require(:post).permit(:title, :content, :picture)
+  end
 
-    def correct_user
-      @post = current_user.posts.find_by(id: params[:id])
-      redirect_to root_url if @post.nil?
-    end
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to root_url if @post.nil?
+  end
 
-    def find_post
-      @post = Post.find(params[:id])
-    end
+  def find_post
+    @post = Post.find(params[:id])
+  end
 end

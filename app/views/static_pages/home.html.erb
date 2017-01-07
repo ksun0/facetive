@@ -1,9 +1,16 @@
 <% provide(:title, "Home") %>
 
-    <h1 class="text-center">All Posts</h1>
-    <% if @posts.any? %>
-      <ol class="posts">
-        <%= render @posts %>
-      </ol>
-      <%= will_paginate @posts, class:"text-center" %>
-    <% end %>
+    <div class="col-1">
+              <h1>Write a Post <small class="h1-small">start a discussion, ask a question</small></h1>
+              <hr>
+                <%= render 'posts/new' %>
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+    </div>
+
+    <div class="col-2 truncated_posts">
+      <h1>Discussion Feed  <small class="h1-small">Based on People/Topics I Follow</small></h1>
+      <hr>
+      <%= render 'shared/feed' %>
+    </div>
