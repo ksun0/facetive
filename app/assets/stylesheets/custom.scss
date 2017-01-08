@@ -12,6 +12,7 @@ $light: #9a9da4;
 $green: #7ac483;
 $border: #E9E9E9;
 $danger: #a94442;
+$lighthover: #eee;
 
 * {
   -moz-box-sizing:    border-box;
@@ -27,6 +28,7 @@ $danger: #a94442;
 /* universal */
 
 body {
+
   font-family: 'Forum', serif;
 }
 
@@ -202,12 +204,13 @@ hr {
 }
 
 .col-1 {
-  width: 40%;
-  padding: 0 5% 0 2.5%;
+  width: 30%;
+  padding: 0 2.5%;
+  border-right: 1px solid $lighthover;
 }
 
 .col-2 {
-  width: 60%;
+  width: 70%;
   padding: 0 2.5%
 }
 
@@ -350,7 +353,7 @@ input[type="submit"] {
   }
 
   .clickable:hover {
-    background: #eee;
+    background: $lighthover;
     cursor: pointer;
   }
 
@@ -390,7 +393,7 @@ input[type="submit"] {
 
 .truncated_posts {
   .content {
-    max-height: 10.5ex;
+    max-height: 3.5ex;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
