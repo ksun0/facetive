@@ -1,5 +1,5 @@
 <% provide(:title, @post.title) %>
-
+  <div class="skinny_wrapper">
 <div class="posts">
 
   <%= link_to gravatar_for(@post.user, size: 50), @post.user, class: "user" %>
@@ -18,8 +18,7 @@
     <%= @post.content %>
     <%= image_tag @post.picture.url if @post.picture? %>
   </span>
-
-
   <hr>
+</div>
   <%= render 'disqus' %>
 </div>

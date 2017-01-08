@@ -38,6 +38,11 @@ body {
 }
 
 .skinny_wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.super_skinny_wrapper {
   width: 50%;
   margin: 0 auto;
 }
@@ -347,6 +352,7 @@ input[type="submit"] {
 /* posts */
 
 .posts {
+  margin: 2em 0 2em 0;
   .clickable {
     padding: 10px;
     border-bottom: 1px solid $border;
@@ -401,7 +407,8 @@ input[type="submit"] {
 }
 
 #disqus_thread {
-
+  background: $lighthover;
+  padding: 2em;
 }
 
 /* miscellaneous */
