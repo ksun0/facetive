@@ -1,9 +1,9 @@
 <%= form_for(@post, html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
     <%= f.label :title %>:
-    <%= f.text_field :title, placeholder: "Post title..." %>
+    <%= f.text_field :title, placeholder: "Post title...", class: 'form-control' %>
       <%= f.label :content %>:
-    <%= f.text_area :content, placeholder: "Compose new post...", rows: "5" %>
+    <%= f.text_area :content, placeholder: "Compose new post...", rows: "5", class: 'form-control' %>
       <%= f.label "Upload Picture here" %>:
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
 

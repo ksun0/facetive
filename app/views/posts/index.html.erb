@@ -1,0 +1,9 @@
+<% provide(:title, "Posts") %>
+
+    <h1 class="text-center">All Posts</h1>
+    <% if @posts.any? %>
+      <div class="posts truncated_posts">
+        <%= render @posts %>
+      </div>
+      <%= will_paginate @posts, class: "pagination" %>
+    <% end %>
