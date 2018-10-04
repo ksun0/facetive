@@ -1,24 +1,20 @@
 <header id="main_navigation" class="clearfix">
-    <%= link_to "Facts and Perspectives", root_path, class: "logo" %>
-    <nav>
+  <%= link_to "Facts and Perspectives", root_path, class: "logo" %>
+  <nav>
+    <%= link_to "Home", root_path %>
+    <% if logged_in? %>
+    <%= link_to "Feed", feed_path %>
+    <%= link_to "Users", users_path %>
 
-        <%= link_to "Home", root_path %>
-        <% if logged_in? %>
-          <%= link_to "Users", users_path %>
+    <%= link_to "Profile", current_user %>
+    <%= link_to "Settings", edit_user_path(current_user) %>
 
+    <%= link_to "Log out", logout_path, method: "delete" %>
 
-              <%= link_to "Profile", current_user %>
-            <%= link_to "Settings", edit_user_path(current_user) %>
+    <% else %>
+    <%= link_to "Sign up", signup_path %>
+    <%= link_to "Log in", login_path %>
+    <% end %>
 
-
-                <%= link_to "Log out", logout_path, method: "delete" %>
-
-
-
-        <% else %>
-        <%= link_to "Sign up", signup_path %>
-          <%= link_to "Log in", login_path %>
-        <% end %>
-
-    </nav>
+  </nav>
 </header>

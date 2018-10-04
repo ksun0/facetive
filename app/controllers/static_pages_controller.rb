@@ -1,11 +1,15 @@
 class StaticPagesController < ApplicationController
-  layout false, only: [:welcome]
+  layout false, only: [:welcome, :home]
   before_action :logged_out, only: [:home]
 
   def welcome
   end
 
   def home
+
+  end
+
+  def feed
     if logged_in?
       @post  = current_user.posts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
